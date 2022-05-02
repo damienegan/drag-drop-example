@@ -1,4 +1,4 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 body, html, .mat-card, mat-card-title, mat-card-subtitle, .mat-card-subtitle {
   font-family: "Andale Mono", serif;
