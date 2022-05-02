@@ -11,7 +11,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     MatCardModule,
     DragDropModule
