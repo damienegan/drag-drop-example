@@ -13,108 +13,131 @@ export class AppComponent {
   semester1 = [
     {
       name: 'EXC 3410',
-      category: 'The Firm'
+      category: 'The Firm',
+      points: '7,5'
     },
     {
       name: 'EXC 3452',
-      category: 'Financial Reporting and Analysis'
+      category: 'Financial Reporting and Analysis',
+      points: '7,5'
     },
     {
       name: 'EXC 3415',
-      category: 'Marketing Management'
+      category: 'Marketing Management',
+      points: '7,5'
     },
     {
       name: 'EDI XX01',
-      category: 'Programming and Data Management'
+      category: 'Programming and Data Management',
+      points: '7,5'
     }
   ];
   semester2 = [
     {
       name: 'EXC 3442',
-      category: 'Managerial Accounting'
+      category: 'Managerial Accounting',
+      points: '7,5'
     },
     {
       name: 'EXC 2910',
-      category: 'Mathematics'
+      category: 'Mathematics',
+      points: '7,5'
     },
     {
       name: 'EDI XX02',
-      category: 'Digital Value Creation'
+      category: 'Digital Value Creation',
+      points: '7,5'
     },
     {
       name: 'EXC 2904',
-      category: 'Statistics'
+      category: 'Statistics',
+      points: '7,5'
     }
   ];
   semester3 = [
     {
       name: 'EXC 3520',
-      category: 'Microeconomics'
+      category: 'Microeconomics',
+      points: '7,5'
     },
     {
       name: 'EDI XX03',
-      category: 'Digital Problem Solving and Task Automation'
+      category: 'Digital Problem Solving and Task Automation',
+      points: '7,5'
     },
     {
       name: 'EDI XX04',
-      category: 'Influential Communication for Digital Business'
+      category: 'Influential Communication for Digital Business',
+      points: '7,5'
     },
     {
       name: 'EDI XX05',
-      category: 'Organizing Digitally'
+      category: 'Organizing Digitally',
+      points: '7,5'
     }
   ];
 
   semester4 = [
     {
       name: 'EXC 3525',
-      category: 'Macroeconomics'
+      category: 'Macroeconomics',
+      points: '7,5'
     },
     {
       name: 'EXC 3505',
-      category: 'Strategy'
+      category: 'Strategy',
+      points: '7,5'
     },
     {
       name: 'EXC 2953',
-      category: 'Organizational Behaviour and Management'
+      category: 'Organizational Behaviour and Management',
+      points: '7,5'
     },
     {
       name: 'EDI XX06',
-      category: 'Business and Systems Architecture'
+      category: 'Business and Systems Architecture',
+      points: '7,5'
     }
   ];
 
   semester5 = [
     {
       name: 'EDI XX07',
-      category: 'Digital Business Analysis '
+      category: 'Digital Business Analysis ',
+      points: '7,5'
     },
     {
       name: 'EDI XXXX',
-      category: 'Digital Innovation'
+      category: 'Digital Innovation',
+      points: '7,5'
     },
     {
       name: 'Int 1234',
-      category: 'Internship'
+      category: 'Internship',
+      points: '15'
     },
     {
       name: 'EXC',
-      category: 'Exchange'
+      category: 'Exchange',
+      points: '15'
     }
   ];
 
   semester6 = [
     {
       name: 'EDI XX09',
-      category: 'Digital Business Law'
+      category: 'Digital Business Law',
+      points: '7,5'
     },
     {
       name: 'EDI XX10',
-      category: 'Digital Business Project'
+      category: 'Digital Business Project',
+      points: '15'
     },
     {
       name: 'ELE 1234',
-      category: 'Elective'
+      category: 'Elective',
+      points: '7,5'
     },
 
   ];
