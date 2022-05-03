@@ -39,14 +39,14 @@
       </div>
     </div>
 
-    <div class="todo-container column-container">
+    <div class="semester4-container column-container">
       <div class="list"
            cdkDropList
            #todoList="cdkDropList"
            [cdkDropListData]="semester4"
            [cdkDropListConnectedTo]="[doneList]"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Semester 4</h2>
+        <h2>Semester 4</h2><div><span>+</span></div>
         <mat-card *ngFor="let todo of semester4" cdkDrag>
           <mat-card-header>
             <mat-card-title>{{todo.name}}</mat-card-title>
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="done-container column-container">
+    <div class="semester5-container column-container">
       <div class="list"
            cdkDropList
            #doneList="cdkDropList"
