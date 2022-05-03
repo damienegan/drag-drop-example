@@ -7,45 +7,116 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Drag & Drop in Angular 7';
-  website = 'https://samorgill.com';
+  title = 'BACHELOR OF DIGITAL BUSINESS';
+  website = 'https://www.bi.edu/programmes-and-individual-courses/bachelor-programmes/digital-business/';
 
-  todos = [
+  semester1 = [
     {
-      name: 'Angular',
-      category: 'Web Development'
+      name: 'EXC 3410',
+      category: 'The Firm'
     },
     {
-      name: 'Flexbox',
-      category: 'Web Development'
+      name: 'EXC 3452',
+      category: 'Financial Reporting and Analysis'
     },
     {
-      name: 'iOS',
-      category: 'App Development'
+      name: 'EXC 3415',
+      category: 'Marketing Management'
     },
     {
-      name: 'Java',
-      category: 'Software development'
+      name: 'EDI XX01',
+      category: 'Programming and Data Management'
+    }
+  ];
+  semester2 = [
+    {
+      name: 'EXC 3442',
+      category: 'Managerial Accounting'
+    },
+    {
+      name: 'EXC 2910',
+      category: 'Mathematics'
+    },
+    {
+      name: 'EDI XX02',
+      category: 'Digital Value Creation'
+    },
+    {
+      name: 'EXC 2904',
+      category: 'Statistics'
+    }
+  ];
+  semester3 = [
+    {
+      name: 'EXC 3520',
+      category: 'Microeconomics'
+    },
+    {
+      name: 'EDI XX03',
+      category: 'Digital Problem Solving and Task Automation'
+    },
+    {
+      name: 'EDI XX04',
+      category: 'Influential Communication for Digital Business'
+    },
+    {
+      name: 'EDI XX05',
+      category: 'Organizing Digitally'
     }
   ];
 
-  completed = [
+  semester4 = [
     {
-      name: 'Android',
-      category: 'Mobile Development'
+      name: 'EXC 3525',
+      category: 'Macroeconomics'
     },
     {
-      name: 'MongoDB',
-      category: 'Databases'
+      name: 'EXC 3505',
+      category: 'Strategy'
     },
     {
-      name: 'ARKit',
-      category: 'Augmented Reality'
+      name: 'EXC 2953',
+      category: 'Organizational Behaviour and Management'
     },
     {
-      name: 'React',
-      category: 'Web Development'
+      name: 'EDI XX06',
+      category: 'Business and Systems Architecture'
     }
+  ];
+
+  semester5 = [
+    {
+      name: 'EDI XX07',
+      category: 'Digital Business Analysis '
+    },
+    {
+      name: 'EDI XXXX',
+      category: 'Digital Innovation'
+    },
+    {
+      name: 'Int 1234',
+      category: 'Internship'
+    },
+    {
+      name: 'EXC',
+      category: 'Exchange'
+    }
+  ];
+
+  semester6 = [
+    {
+      name: 'EDI XX09',
+      category: 'Digital Business Law'
+    },
+    {
+      name: 'EDI XX10',
+      category: 'Digital Business Project'
+    },
+    {
+      name: 'ELE 1234',
+      category: 'Elective'
+    },
+
   ];
 
   onDrop(event: CdkDragDrop<string[]>) {

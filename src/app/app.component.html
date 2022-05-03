@@ -1,18 +1,53 @@
 <div class="container">
   <h1>{{title}}</h1>
-  <p>For more turorials and courses visit <a [href]="website" target="_blank"> samorgill.com</a></p>
+  <p> <a [href]="website" target="_blank"> www.bi.no</a></p>
 
   <div class="list-container">
+    <div class="semester1-container column-container completed-container">
+      <div>
+        <h2>Semester 1</h2>
+        <mat-card *ngFor="let course of semester1">
+          <mat-card-header>
+            <mat-card-title>{{course.name}}</mat-card-title>
+            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="semester2-container column-container completed-container">
+      <div>
+        <h2>Semester 2</h2>
+        <mat-card *ngFor="let course of semester2">
+          <mat-card-header>
+            <mat-card-title>{{course.name}}</mat-card-title>
+            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="semester3-container column-container completed-container">
+      <div>
+        <h2>Semester 3</h2>
+        <mat-card *ngFor="let course of semester3">
+          <mat-card-header>
+            <mat-card-title>{{course.name}}</mat-card-title>
+            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
 
     <div class="todo-container column-container">
       <div class="list"
            cdkDropList
            #todoList="cdkDropList"
-           [cdkDropListData]="todos"
+           [cdkDropListData]="semester4"
            [cdkDropListConnectedTo]="[doneList]"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Tech to learn</h2>
-        <mat-card *ngFor="let todo of todos" cdkDrag>
+        <h2>Semester 4</h2>
+        <mat-card *ngFor="let todo of semester4" cdkDrag>
           <mat-card-header>
             <mat-card-title>{{todo.name}}</mat-card-title>
             <mat-card-subtitle>{{todo.category}}</mat-card-subtitle>
@@ -25,11 +60,11 @@
       <div class="list"
            cdkDropList
            #doneList="cdkDropList"
-           [cdkDropListData]="completed"
+           [cdkDropListData]="semester5"
            [cdkDropListConnectedTo]="todoList"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Tech learned</h2>
-        <mat-card *ngFor="let complete of completed" cdkDrag>
+        <h2>Semester 5</h2>
+        <mat-card *ngFor="let complete of semester5" cdkDrag>
           <mat-card-header>
             <mat-card-title>{{complete.name}}</mat-card-title>
             <mat-card-subtitle>{{complete.category}}</mat-card-subtitle>
@@ -38,6 +73,17 @@
       </div>
     </div>
 
+    <div class="semester6-container column-container completed-container">
+      <div>
+        <h2>Semester 6</h2>
+        <mat-card *ngFor="let complete of semester6">
+          <mat-card-header>
+            <mat-card-title>{{complete.name}}</mat-card-title>
+            <mat-card-subtitle>{{complete.category}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -24,9 +24,17 @@ h2 {
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
-  background-color: RGBA(255, 255, 255, 0.05);
+  background-color: RGBA(0, 0, 0, 0.5);
 }
 
+.completed-container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+  background-color: RGBA(255, 255, 255, 0.05);
+}
 
 mat-card {
   margin: 1em;
