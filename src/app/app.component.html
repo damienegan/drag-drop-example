@@ -11,8 +11,8 @@
         <h3>Avlagte studiepoeng:  </h3>
         <mat-card *ngFor="let course of semester1">
           <mat-card-header>
-            <mat-card-title>{{course.name}}</mat-card-title>
-            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
@@ -26,8 +26,8 @@
         <h3>Avlagte studiepoeng: {{totalPointsSemester2}}</h3>
         <mat-card *ngFor="let course of semester2">
           <mat-card-header>
-            <mat-card-title>{{course.name}}</mat-card-title>
-            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
@@ -40,27 +40,50 @@
         <h3>Avlagte studiepoeng:</h3>
         <mat-card *ngFor="let course of semester3">
           <mat-card-header>
-            <mat-card-title>{{course.name}}</mat-card-title>
-            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
       </div>
     </div>
 
+
+    <div class="availableCourses-container column-container">
+      <div class="list"
+           cdkDropList
+           #availableList="cdkDropList"
+           [cdkDropListData]="availableCourses"
+           [cdkDropListConnectedTo]="[semester4List]"
+           (cdkDropListDropped)="onDrop($event)">
+        <h2>Available Courses</h2>
+
+        <mat-card *ngFor="let course of availableCourses" cdkDrag>
+          <mat-card-header>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+
+      </div>
+    </div>
+
+
+
     <div class="semester4-container column-container">
       <div class="list"
            cdkDropList
-           #todoList="cdkDropList"
+           #semester4List="cdkDropList"
            [cdkDropListData]="semester4"
-           [cdkDropListConnectedTo]="[doneList]"
+           [cdkDropListConnectedTo]="[semester5List]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Vår 2023</h2>
           <h3>Avlagte studiepoeng:</h3>
         <mat-card *ngFor="let course of semester4" cdkDrag>
           <mat-card-header>
-            <mat-card-title>{{course.name}}</mat-card-title>
-            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
@@ -71,16 +94,16 @@
     <div class="semester5-container column-container">
       <div class="list"
            cdkDropList
-           #doneList="cdkDropList"
+           #semester5List="cdkDropList"
            [cdkDropListData]="semester5"
-           [cdkDropListConnectedTo]="todoList"
+           [cdkDropListConnectedTo]="[availableCourses]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Høst 2023</h2>
         <h3>Avlagte studiepoeng:</h3>
         <mat-card *ngFor="let course of semester5" cdkDrag>
           <mat-card-header>
-            <mat-card-title>{{course.name}}</mat-card-title>
-            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
@@ -93,8 +116,8 @@
         <h3>Avlagte studiepoeng:</h3>
         <mat-card *ngFor="let course of semester6">
           <mat-card-header>
-            <mat-card-title>{{course.name}}</mat-card-title>
-            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
