@@ -6,6 +6,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'BACHELOR OF DIGITAL BUSINESS';
   website = 'https://www.bi.edu/programmes-and-individual-courses/bachelor-programmes/digital-business/';
@@ -21,22 +22,26 @@ export class AppComponent {
     {
       code: 'Int',
       title: 'Internship',
-      points: 15
+      points: 15,
+      complete: false
     },
     {
       code: 'EDI XX06',
-      title: 'Business and Systems Architecture',
-      points: 7.5
+      title: 'Business and Systems Architecture          ',
+      points: 7.5,
+      complete: false
     },
     {
       code: 'EDI XX07',
-      title: 'Digital Business Analysis ',
-      points: 7.5
+      title: 'Digital Business Analysis                   ',
+      points: 7.5,
+      complete: false
     },
     {
       code: 'EDI XXXX',
-      title: 'Digital Innovation',
-      points: 7.5
+      title: 'Digital Innovation                           ',
+      points: 7.5,
+      complete: false
     }
   ];
 
@@ -44,67 +49,91 @@ export class AppComponent {
   semester1 = [
     {
       code: 'EXC 3410',
-      title: 'The Firm',
-      points: 7.5
+      title: 'The Firm.....................',
+      points: 7.5,
+      complete: 'false',
+      grade: '-'
     },
     {
       code: 'EXC 3452',
       title: 'Financial Reporting and Analysis',
-      points: 7.5
+      points: 7.5,
+      complete: 'true',
+      grade: 'A'
     },
     {
       code: 'EXC 3415',
       title: 'Marketing Management',
-      points: 7.5
+      points: 7.5,
+      complete: 'true',
+      grade: 'B'
     },
     {
       code: 'EDI XX01',
       title: 'Programming and Data Management',
-      points: 7.5
+      points: 7.5,
+      complete: 'true',
+      grade: 'C'
     }
   ];
   semester2 = [
     {
       code: 'EXC 3442',
       title: 'Managerial Accounting',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     },
     {
       code: 'EXC 2910',
       title: 'Mathematics',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     },
     {
       code: 'EDI XX02',
       title: 'Digital Value Creation',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     },
     {
       code: 'EXC 2904',
       title: 'Statistics',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     }
   ];
   semester3 = [
     {
       code: 'EXC 3520',
       title: 'Microeconomics',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     },
     {
       code: 'EDI XX03',
       title: 'Digital Problem Solving and Task Automation',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     },
     {
       code: 'EDI XX04',
       title: 'Influential Communication for Digital Business',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     },
     {
       code: 'EDI XX05',
       title: 'Organizing Digitally',
-      points: 7.5
+      points: 7.5,
+      complete: true,
+      grade: 'A'
     }
   ];
 
@@ -112,17 +141,23 @@ export class AppComponent {
     {
       code: 'EXC 3525',
       title: 'Macroeconomics',
-      points: 7.5
+      points: 7.5,
+      complete: false,
+      grade: '-'
     },
     {
       code: 'EXC 3505',
       title: 'Strategy',
-      points: 7.5
+      points: 7.5,
+      complete: false,
+      grade: '-'
     },
     {
       code: 'EXC 2953',
       title: 'Organizational Behaviour and Management',
-      points: 7.5
+      points: 7.5,
+      complete: false,
+      grade: '-'
     }
 
   ];
@@ -131,7 +166,9 @@ export class AppComponent {
     {
       code: 'EXC',
       title: 'Exchange',
-      points: 15
+      points: 15,
+      complete: false,
+      grade: '-'
     }
   ];
 
@@ -139,17 +176,23 @@ export class AppComponent {
     {
       code: 'EDI XX09',
       title: 'Digital Business Law',
-      points: 7.5
+      points: 7.5,
+      complete: false,
+      grade: '-'
     },
     {
       code: 'EDI XX10',
       title: 'Digital Business Project',
-      points: 15
+      points: 15,
+      complete: false,
+      grade: '-'
     },
     {
       code: 'ELE 1234',
       title: 'Elective',
-      points: 7.5
+      points: 7.5,
+      complete: false,
+      grade: '-'
     },
 
   ];

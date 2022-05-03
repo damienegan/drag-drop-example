@@ -8,24 +8,24 @@
     <div class="semester1-container column-container completed-container">
       <div>
         <h2>Høst 2021</h2>
-        <h3>Avlagte studiepoeng:  </h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30 </h3>
         <mat-card *ngFor="let course of semester1">
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox align="right" disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
+
         </mat-card>
-        <mat-checkbox></mat-checkbox>
       </div>
     </div>
 
     <div class="semester2-container column-container completed-container">
       <div>
         <h2>Vår 2022</h2>
-        <h3>Avlagte studiepoeng: {{totalPointsSemester2}}</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
         <mat-card *ngFor="let course of semester2">
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
@@ -37,9 +37,9 @@
     <div class="semester3-container column-container completed-container">
       <div>
         <h2>Høst 2022</h2>
-        <h3>Avlagte studiepoeng:</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
         <mat-card *ngFor="let course of semester3">
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
@@ -56,18 +56,18 @@
            [cdkDropListData]="availableCourses"
            [cdkDropListConnectedTo]="[semester4List,semester5List]"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Available Courses</h2>
-
+        <h2>Valgmuligheter</h2>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
         <mat-card *ngFor="let course of availableCourses" cdkDrag>
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
-
       </div>
     </div>
+
 
 
 
@@ -79,15 +79,14 @@
            [cdkDropListConnectedTo]="[semester5List,availableCoursesList]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Vår 2023</h2>
-          <h3>Avlagte studiepoeng:</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
         <mat-card *ngFor="let course of semester4" cdkDrag>
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
-
       </div>
     </div>
 
@@ -99,9 +98,9 @@
            [cdkDropListConnectedTo]="[availableCoursesList, semester4List]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Høst 2023</h2>
-        <h3>Avlagte studiepoeng:</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
         <mat-card *ngFor="let course of semester5" cdkDrag>
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
@@ -113,9 +112,9 @@
     <div class="semester6-container column-container completed-container">
       <div>
         <h2>Vår 2024</h2>
-        <h3>Avlagte studiepoeng:</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
         <mat-card *ngFor="let course of semester6">
-          <mat-card-header>
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
