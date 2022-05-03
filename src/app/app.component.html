@@ -16,7 +16,7 @@
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
-
+        <mat-checkbox></mat-checkbox>
       </div>
     </div>
 
@@ -52,9 +52,9 @@
     <div class="availableCourses-container column-container">
       <div class="list"
            cdkDropList
-           #availableList="cdkDropList"
+           #availableCoursesList="cdkDropList"
            [cdkDropListData]="availableCourses"
-           [cdkDropListConnectedTo]="[semester4List]"
+           [cdkDropListConnectedTo]="[semester4List,semester5List]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Available Courses</h2>
 
@@ -76,7 +76,7 @@
            cdkDropList
            #semester4List="cdkDropList"
            [cdkDropListData]="semester4"
-           [cdkDropListConnectedTo]="[semester5List]"
+           [cdkDropListConnectedTo]="[semester5List,availableCoursesList]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Vår 2023</h2>
           <h3>Avlagte studiepoeng:</h3>
@@ -96,7 +96,7 @@
            cdkDropList
            #semester5List="cdkDropList"
            [cdkDropListData]="semester5"
-           [cdkDropListConnectedTo]="[availableCourses]"
+           [cdkDropListConnectedTo]="[availableCoursesList, semester4List]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Høst 2023</h2>
         <h3>Avlagte studiepoeng:</h3>
