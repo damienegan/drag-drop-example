@@ -1,13 +1,14 @@
-<p><h1>Ola Nordmann</h1>
+<h1>Ola Nordmann</h1>
   <h1>Studieprogram: {{title}}</h1>
- <a [href]="website" target="_blank"> Kursinfo</a>
+ <a [href]="website" target="_blank">Kursinfo</a>
 <div class="container">
 
 
   <div class="list-container">
     <div class="semester1-container column-container completed-container">
       <div>
-        <h2>Semester 1</h2>
+        <h2>Høst 2021</h2>
+        <h3>Avlagte studiepoeng:  </h3>
         <mat-card *ngFor="let course of semester1">
           <mat-card-header>
             <mat-card-title>{{course.name}}</mat-card-title>
@@ -15,12 +16,14 @@
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
+
       </div>
     </div>
 
     <div class="semester2-container column-container completed-container">
       <div>
-        <h2>Semester 2</h2>
+        <h2>Vår 2022</h2>
+        <h3>Avlagte studiepoeng: {{totalPointsSemester2}}</h3>
         <mat-card *ngFor="let course of semester2">
           <mat-card-header>
             <mat-card-title>{{course.name}}</mat-card-title>
@@ -33,7 +36,8 @@
 
     <div class="semester3-container column-container completed-container">
       <div>
-        <h2>Semester 3</h2>
+        <h2>Høst 2022</h2>
+        <h3>Avlagte studiepoeng:</h3>
         <mat-card *ngFor="let course of semester3">
           <mat-card-header>
             <mat-card-title>{{course.name}}</mat-card-title>
@@ -51,14 +55,16 @@
            [cdkDropListData]="semester4"
            [cdkDropListConnectedTo]="[doneList]"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Semester 4</h2><div><span>+</span></div>
-        <mat-card *ngFor="let todo of semester4" cdkDrag>
+        <h2>Vår 2023</h2>
+          <h3>Avlagte studiepoeng:</h3>
+        <mat-card *ngFor="let course of semester4" cdkDrag>
           <mat-card-header>
-            <mat-card-title>{{todo.name}}</mat-card-title>
-            <mat-card-subtitle>{{todo.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.name}}</mat-card-title>
+            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
+
       </div>
     </div>
 
@@ -69,11 +75,12 @@
            [cdkDropListData]="semester5"
            [cdkDropListConnectedTo]="todoList"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Semester 5</h2>
-        <mat-card *ngFor="let complete of semester5" cdkDrag>
+        <h2>Høst 2023</h2>
+        <h3>Avlagte studiepoeng:</h3>
+        <mat-card *ngFor="let course of semester5" cdkDrag>
           <mat-card-header>
-            <mat-card-title>{{complete.name}}</mat-card-title>
-            <mat-card-subtitle>{{complete.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.name}}</mat-card-title>
+            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
@@ -82,11 +89,12 @@
 
     <div class="semester6-container column-container completed-container">
       <div>
-        <h2>Semester 6</h2>
-        <mat-card *ngFor="let complete of semester6">
+        <h2>Vår 2024</h2>
+        <h3>Avlagte studiepoeng:</h3>
+        <mat-card *ngFor="let course of semester6">
           <mat-card-header>
-            <mat-card-title>{{complete.name}}</mat-card-title>
-            <mat-card-subtitle>{{complete.category}}</mat-card-subtitle>
+            <mat-card-title>{{course.name}}</mat-card-title>
+            <mat-card-subtitle>{{course.category}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>
