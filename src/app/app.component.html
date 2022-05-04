@@ -12,7 +12,7 @@
         <mat-card *ngFor="let course of semester1">
           <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox align="right" disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
-            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+            <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
 
@@ -61,7 +61,7 @@
         <mat-card *ngFor="let course of availableCourses" cdkDrag>
           <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
             <mat-card-title>{{course.code}}</mat-card-title>
-            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+            <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
         </mat-card>

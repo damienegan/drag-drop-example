@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 
 export class AppComponent {
+  constructor(private http: HttpClient) { }
   title = 'BACHELOR OF DIGITAL BUSINESS';
   website = 'https://www.bi.edu/programmes-and-individual-courses/bachelor-programmes/digital-business/';
   totalPointsSemester1 = 0;
@@ -27,19 +29,19 @@ export class AppComponent {
     },
     {
       code: 'EDI XX06',
-      title: 'Business and Systems Architecture          ',
+      title: 'Business and Systems Architecture',
       points: 7.5,
       complete: false
     },
     {
       code: 'EDI XX07',
-      title: 'Digital Business Analysis                   ',
+      title: 'Digital Business Analysis',
       points: 7.5,
       complete: false
     },
     {
       code: 'EDI XXXX',
-      title: 'Digital Innovation                           ',
+      title: 'Digital Innovation',
       points: 7.5,
       complete: false
     }
@@ -49,7 +51,7 @@ export class AppComponent {
   semester1 = [
     {
       code: 'EXC 3410',
-      title: 'The Firm.....................',
+      title: 'The Firm',
       points: 7.5,
       complete: 'false',
       grade: '-'
@@ -197,6 +199,8 @@ export class AppComponent {
 
   ];
 
+  totalAngularPackages;
+
   onDrop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data,
@@ -207,6 +211,10 @@ export class AppComponent {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex, event.currentIndex);
+        this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular').subscribe(data => {
+          this.totalAngularPackages = data.total;
+          alert(this.totalAngularPackages);
+      })
     }
   }
 }

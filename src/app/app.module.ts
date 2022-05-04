@@ -7,6 +7,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     DragDropModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
