@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
+import { isNgTemplate } from '@angular/compiler';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,8 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AppComponent {
+  selectedSpecialisation = 'None';
+  selectedCampus = 'Oslo';
   constructor(private http: HttpClient) { }
   title = 'BACHELOR OF DIGITAL BUSINESS';
   website = 'https://www.bi.edu/programmes-and-individual-courses/bachelor-programmes/digital-business/';
@@ -18,6 +23,9 @@ export class AppComponent {
   totalPointsSemester4 = 0;
   totalPointsSemester5 = 0;
   totalPointsSemester6 = 0;
+
+
+
 
 
   availableCourses = [
@@ -44,17 +52,62 @@ export class AppComponent {
       title: 'Digital Innovation',
       points: 7.5,
       complete: false
+    },
+    {
+      code: 'EDI XX07',
+      title: 'Digital Business Analysis',
+      points: 7.5,
+      complete: false
+    },
+    {
+      code: 'EDI XXXX',
+      title: 'Digital Innovation',
+      points: 7.5,
+      complete: false
     }
   ];
 
-
-  semester1 = [
+  specialIntBus = [
+    {
+      code: 'EXC 3603',
+      title: 'International Economics',
+      points: 7.5,
+      complete: 'false',
+      grade: '-'
+    },
     {
       code: 'EXC 3410',
       title: 'The Firm',
       points: 7.5,
       complete: 'false',
       grade: '-'
+    }
+  ];
+
+  specialFinance = [
+    {
+      code: 'EXC 3100',
+      title: 'International Finane',
+      points: 7.5,
+      complete: 'false',
+      grade: '-'
+    },
+    {
+      code: 'EXC 3410',
+      title: 'The Firm',
+      points: 7.5,
+      complete: 'false',
+      grade: '-'
+    }
+  ];
+
+  semester1 = [
+    {
+      code: 'EXC 3410',
+      title: 'The Firm',
+      points: 7.5,
+      complete: 'true',
+      grade: 'D'
     },
     {
       code: 'EXC 3452',
@@ -77,6 +130,7 @@ export class AppComponent {
       complete: 'true',
       grade: 'C'
     }
+
   ];
   semester2 = [
     {
@@ -106,7 +160,14 @@ export class AppComponent {
       points: 7.5,
       complete: true,
       grade: 'A'
-    }
+    },
+    {
+    code: 'EDI XX01',
+    title: 'Programming with Yngve',
+    points: 7.5,
+    complete: 'true',
+    grade: 'C'
+  }
   ];
   semester3 = [
     {
@@ -206,14 +267,15 @@ export class AppComponent {
       moveItemInArray(event.container.data,
         event.previousIndex,
         event.currentIndex);
-
+        alert(JSON.stringify(event.container.data));
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex, event.currentIndex);
         this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular').subscribe(data => {
           this.totalAngularPackages = data.total;
-          alert(this.totalAngularPackages);
+alert(this.totalAngularPackages);
+          alert(JSON.stringify(event.container.data));
       })
     }
   }

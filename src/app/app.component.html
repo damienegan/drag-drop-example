@@ -1,6 +1,39 @@
-<h1>Ola Nordmann</h1>
-  <h1>Studieprogram: {{title}}</h1>
- <a [href]="website" target="_blank">Kursinfo</a>
+
+<table>
+  <tr>
+    <td><h1>Ola Nordmann</h1></td>
+  </tr>
+  <tr>
+    <td><h1>Studieprogram: {{title}}&nbsp;&nbsp;&nbsp;&nbsp;</h1></td>
+   <td><mat-form-field appearance="standard">
+    <mat-label>Select specialisation</mat-label>
+    <mat-select [(value)]="selectedSpecialisation">
+      <mat-option>None</mat-option>
+      <mat-option value="International Business">International Business</mat-option>
+      <mat-option value="Finance">Finance</mat-option>
+    </mat-select>
+  </mat-form-field></td>
+    <td></td>
+    <td><mat-form-field appearance="standard">
+      <mat-label>Select campue</mat-label>
+      <mat-select [(value)]="selectedSpecialisation">
+        <mat-option>None</mat-option>
+        <mat-option value="Oslo">Oslo</mat-option>
+        <mat-option value="Bergen">Bergen</mat-option>
+      </mat-select>
+    </mat-form-field></td>
+    <td></td>
+    <td><h2>Degree Progress: 50% &nbsp;&nbsp;&nbsp;&nbsp;</h2></td>
+    <td></td>
+    <td><h2>GPA: 4.0</h2></td>
+  </tr>
+  <tr>
+    <td><a [href]="website" target="_blank">Kursinfo</a></td>
+  </tr>
+</table>
+
+
+
 <div class="container">
 
 
@@ -69,6 +102,52 @@
     </div>
 
 
+      <div class="specialisation-container column-container completed-container">
+        <mat-card *ngIf="selected === 'International Business'">
+        <mat-card-header>
+      <div>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;Specialisation in International Business</h2>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
+
+        <mat-card *ngFor="let course of specialIntBus" cdkDrag>
+
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+          </mat-card-header>
+
+        </mat-card>
+
+      </div>
+    </mat-card-header>
+  </mat-card>
+      </div>
+
+      <div class="specialisation-container column-container completed-container">
+        <mat-card *ngIf="selected === 'Finance'">
+        <mat-card-header>
+      <div>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;Specialisation in Finance</h2>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
+
+        <mat-card *ngFor="let course of specialFinance" cdkDrag>
+
+          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+          </mat-card-header>
+
+        </mat-card>
+
+      </div>
+    </mat-card-header>
+  </mat-card>
+      </div>
+
+
+
 
 
     <div class="semester4-container column-container">
@@ -124,4 +203,7 @@
     </div>
   </div>
 </div>
+
+
+
 
