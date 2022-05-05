@@ -15,8 +15,8 @@
   </mat-form-field></td>
     <td></td>
     <td><mat-form-field appearance="standard">
-      <mat-label>Select campue</mat-label>
-      <mat-select [(value)]="selectedSpecialisation">
+      <mat-label>Select campus</mat-label>
+      <mat-select [(value)]="selectedCampus">
         <mat-option>None</mat-option>
         <mat-option value="Oslo">Oslo</mat-option>
         <mat-option value="Bergen">Bergen</mat-option>
@@ -35,8 +35,6 @@
 
 
 <div class="container">
-
-
   <div class="list-container">
     <div class="semester1-container column-container completed-container">
       <div>
@@ -81,52 +79,77 @@
       </div>
     </div>
 
-
-    <div class="availableCourses-container column-container">
-      <div class="list"
+  <!--mat-card *ngIf="selectedCampus === 'Oslo'">
+    <mat-card-header-->
+      <div class="availableCoursesOslo-container column-container">
+        <div class="list"
            cdkDropList
-           #availableCoursesList="cdkDropList"
-           [cdkDropListData]="availableCourses"
+           #availableCoursesOsloList="cdkDropList"
+           [cdkDropListData]="availableCoursesOslo"
            [cdkDropListConnectedTo]="[semester4List,semester5List]"
            (cdkDropListDropped)="onDrop($event)">
-        <h2>Valgmuligheter</h2>
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
-        <mat-card *ngFor="let course of availableCourses" cdkDrag>
-          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
-            <mat-card-title>{{course.code}}</mat-card-title>
-            <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
-            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
+          <h2>Valgmuligheter Oslo</h2>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+          <mat-card *ngFor="let course of availableCoursesOslo" cdkDrag>
+            <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+              <mat-card-title>{{course.code}}</mat-card-title>
+              <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+              <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
       </div>
-    </div>
+    <!--/mat-card-header>
+  </mat-card-->
+
+  <!--mat-card *ngIf="selectedCampus === 'Bergen'">
+    <mat-card-header>
+      <div class="availableCoursesBergen-container column-container">
+        <div class="list"
+           cdkDropList
+           #availableCoursesBergenList="cdkDropList"
+           [cdkDropListData]="availableCoursesBergen"
+           [cdkDropListConnectedTo]="[semester4List,semester5List]"
+           (cdkDropListDropped)="onDrop($event)">
+          <h2>Valgmuligheter Bergen</h2>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+          <mat-card *ngFor="let course of availableCoursesBergen" cdkDrag>
+            <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+              <mat-card-title>{{course.code}}</mat-card-title>
+              <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+              <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card-header>
+  </mat-card-->
 
 
+ <mat-card *ngIf="selectedSpecialisation === 'International Business'">
+    <mat-card-header>
       <div class="specialisation-container column-container completed-container">
-        <mat-card *ngIf="selected === 'International Business'">
-        <mat-card-header>
-      <div>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;Specialisation in International Business</h2>
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
+        <div>
+          <h2>&nbsp;&nbsp;&nbsp;&nbsp;Specialisation in International Business</h2>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
 
-        <mat-card *ngFor="let course of specialIntBus" cdkDrag>
-
-          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
-            <mat-card-title>{{course.code}}</mat-card-title>
-            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
-            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
-          </mat-card-header>
-
-        </mat-card>
-
+          <mat-card *ngFor="let course of specialIntBus" cdkDrag>
+            <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+              <mat-card-title>{{course.code}}</mat-card-title>
+              <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+              <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
       </div>
     </mat-card-header>
   </mat-card>
-      </div>
 
+
+  <mat-card *ngIf="selectedSpecialisation === 'Finance'">
+    <mat-card-header>
       <div class="specialisation-container column-container completed-container">
-        <mat-card *ngIf="selected === 'Finance'">
-        <mat-card-header>
+
       <div>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;Specialisation in Finance</h2>
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
@@ -140,11 +163,11 @@
           </mat-card-header>
 
         </mat-card>
-
+      </div>
       </div>
     </mat-card-header>
   </mat-card>
-      </div>
+
 
 
 
@@ -155,7 +178,7 @@
            cdkDropList
            #semester4List="cdkDropList"
            [cdkDropListData]="semester4"
-           [cdkDropListConnectedTo]="[semester5List,availableCoursesList]"
+           [cdkDropListConnectedTo]="[semester5List, availableCoursesOsloList]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Vår 2023</h2>
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
@@ -174,7 +197,7 @@
            cdkDropList
            #semester5List="cdkDropList"
            [cdkDropListData]="semester5"
-           [cdkDropListConnectedTo]="[availableCoursesList, semester4List]"
+           [cdkDropListConnectedTo]="[availableCoursesOsloList, semester4List]"
            (cdkDropListDropped)="onDrop($event)">
         <h2>Høst 2023</h2>
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>

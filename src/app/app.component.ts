@@ -28,7 +28,7 @@ export class AppComponent {
 
 
 
-  availableCourses = [
+  availableCoursesOslo = [
     {
       code: 'Int',
       title: 'Internship',
@@ -62,6 +62,21 @@ export class AppComponent {
     {
       code: 'EDI XXXX',
       title: 'Digital Innovation',
+      points: 7.5,
+      complete: false
+    }
+  ];
+
+  availableCoursesBergen = [
+    {
+      code: 'Int',
+      title: 'Internship',
+      points: 15,
+      complete: false
+    },
+    {
+      code: 'EDI XX06',
+      title: 'Business and Systems Architecture',
       points: 7.5,
       complete: false
     }
@@ -106,8 +121,8 @@ export class AppComponent {
       code: 'EXC 3410',
       title: 'The Firm',
       points: 7.5,
-      complete: 'true',
-      grade: 'D'
+      complete: 'false',
+      grade: '-'
     },
     {
       code: 'EXC 3452',
