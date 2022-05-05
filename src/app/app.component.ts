@@ -15,8 +15,9 @@ export class AppComponent {
   selectedSpecialisation = 'None';
   selectedCampus = 'Oslo';
   constructor(private http: HttpClient) { }
-  title = 'BACHELOR OF DIGITAL BUSINESS';
-  website = 'https://www.bi.edu/programmes-and-individual-courses/bachelor-programmes/digital-business/';
+  title = 'BACHELOR OF BUSINESS ADMINISTRATION';
+  website = 'https://www.bi.edu/programmes-and-individual-courses/bachelor-programmes/business-administration/';
+
   totalPointsSemester1 = 0;
   totalPointsSemester2 = 0;
   totalPointsSemester3 = 0;
@@ -24,16 +25,14 @@ export class AppComponent {
   totalPointsSemester5 = 0;
   totalPointsSemester6 = 0;
 
-
-
-
-
   availableCoursesOslo = [
     {
       code: 'Int',
       title: 'Internship',
       points: 15,
-      complete: false
+      complete: false,
+      type: 'Elective',
+      url: 'https://www.bi.edu/study-at-bi/resources-and-opportunities/internship/'
     },
     {
       code: 'EDI XX06',
@@ -62,6 +61,12 @@ export class AppComponent {
     {
       code: 'EDI XXXX',
       title: 'Digital Innovation',
+      points: 7.5,
+      complete: false
+    },
+    {
+      code: 'EXC 3525',
+      title: 'Macroeconomics',
       points: 7.5,
       complete: false
     }
@@ -88,14 +93,54 @@ export class AppComponent {
       title: 'International Economics',
       points: 7.5,
       complete: 'false',
-      grade: '-'
+      grade: '',
+      type: 'Programkurs',
+      url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3603/2021-host'
     },
     {
-      code: 'EXC 3410',
-      title: 'The Firm',
+      code: 'EXC 3611',
+      title: 'International Finance',
       points: 7.5,
       complete: 'false',
-      grade: '-'
+      grade: '',
+      type: 'Programkurs',
+      url: 'https://programmeinfo.bi.no/nb/program/HSBB/2021-host#:~:text=EXC%203611%20International%20Finance',
+    },
+    {
+      code: 'EXC 3630',
+      title: 'Managing International Operations',
+      points: 7.5,
+      complete: 'false',
+      grade: '',
+      type: 'Programkurs',
+      url: 'https://programmeinfo.bi.no/nb/program/HSBB/2021-host#:~:text=EXC%203630%20Managing%20International%20Operations'
+    },
+    {
+      code: 'EXC 3631',
+      title: 'International Business Environment',
+      points: 7.5,
+      complete: 'false',
+      grade: '',
+      type: 'Programkurs',
+      url: 'https://programmeinfo.bi.no/nb/program/HSBB/2021-host#:~:text=EXC%203631%20International%20Business%20Environment'
+    },
+    {
+      code: 'EXC 3602',
+      title: 'International Marketing',
+      points: 7.5,
+      complete: 'false',
+      grade: '',
+      type: 'Programkurs',
+      url: 'https://programmeinfo.bi.no/nb/program/HSBB/2021-host#:~:text=EXC%203602%20International%20Marketing'
+    },
+    {
+      code: 'EXC 3632',
+      title: 'Corporate Goverance',
+      points: 7.5,
+      complete: 'false',
+      grade: '',
+      type: 'Programkurs',
+      url: 'https://programmeinfo.bi.no/nb/program/HSBB/2021-host#:~:text=EXC%203632%20Corporate%20Governance'
     }
   ];
 
@@ -105,14 +150,14 @@ export class AppComponent {
       title: 'International Finane',
       points: 7.5,
       complete: 'false',
-      grade: '-'
+      grade: ''
     },
     {
       code: 'EXC 3410',
       title: 'The Firm',
       points: 7.5,
       complete: 'false',
-      grade: '-'
+      grade: ''
     }
   ];
 
@@ -121,29 +166,37 @@ export class AppComponent {
       code: 'EXC 3410',
       title: 'The Firm',
       points: 7.5,
+      complete: 'true',
+      grade: '-',
+      type: 'Basiskurs',
+      url: 'https://programmeinfo.bi.no/en/course/EXC-3410/2021-autumn/'
+    },
+    {
+      code: 'EXC-3415',
+      title: 'Marketing Management',
+      points: '7.5',
       complete: 'false',
-      grade: '-'
+      grade: '-',
+      type: 'Basiskurs',
+      url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3415/2021-host'
     },
     {
       code: 'EXC 3452',
       title: 'Financial Reporting and Analysis',
       points: 7.5,
       complete: 'true',
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: 'https://www.bi.edu/programmes-and-individual-courses/course-descriptions/financial-reporting-and-analysis/'
     },
     {
-      code: 'EXC 3415',
-      title: 'Marketing Management',
+      code: 'SPÅ 2901',
+      title: 'Business Communications, Culture and Ethics',
       points: 7.5,
       complete: 'true',
-      grade: 'B'
-    },
-    {
-      code: 'EDI XX01',
-      title: 'Programming and Data Management',
-      points: 7.5,
-      complete: 'true',
-      grade: 'C'
+      grade: 'C',
+      type: 'Basiskurs',
+      url: 'https://www.bi.edu/programmes-and-individual-courses/course-descriptions/business-communication-culture-and-ethics/'
     }
 
   ];
@@ -153,35 +206,45 @@ export class AppComponent {
       title: 'Managerial Accounting',
       points: 7.5,
       complete: true,
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: ''
     },
     {
       code: 'EXC 2910',
       title: 'Mathematics',
       points: 7.5,
-      complete: true,
-      grade: 'A'
+      complete: false,
+      grade: '-',
+      type: 'Basiskurs',
+      url: ''
     },
     {
       code: 'EDI XX02',
       title: 'Digital Value Creation',
       points: 7.5,
       complete: true,
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: ''
     },
     {
       code: 'EXC 2904',
       title: 'Statistics',
       points: 7.5,
       complete: true,
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: ''
     },
     {
     code: 'EDI XX01',
     title: 'Programming with Yngve',
     points: 7.5,
     complete: 'true',
-    grade: 'C'
+    grade: 'C',
+    type: 'Basiskurs',
+    url: ''
   }
   ];
   semester3 = [
@@ -190,52 +253,57 @@ export class AppComponent {
       title: 'Microeconomics',
       points: 7.5,
       complete: true,
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: ''
     },
     {
       code: 'EDI XX03',
       title: 'Digital Problem Solving and Task Automation',
       points: 7.5,
       complete: true,
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: ''
     },
     {
       code: 'EDI XX04',
       title: 'Influential Communication for Digital Business',
       points: 7.5,
       complete: true,
-      grade: 'A'
+      grade: 'A',
+      type: 'Basiskurs',
+      url: ''
     },
     {
       code: 'EDI XX05',
       title: 'Organizing Digitally',
       points: 7.5,
-      complete: true,
-      grade: 'A'
+      complete: false,
+      grade: '-',
+      type: 'Basiskurs',
+      url: ''
     }
   ];
 
   semester4 = [
     {
-      code: 'EXC 3525',
-      title: 'Macroeconomics',
-      points: 7.5,
-      complete: false,
-      grade: '-'
-    },
-    {
       code: 'EXC 3505',
       title: 'Strategy',
       points: 7.5,
       complete: false,
-      grade: '-'
+      grade: '',
+      url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
+      type: 'Basiskurs'
     },
     {
       code: 'EXC 2953',
       title: 'Organizational Behaviour and Management',
       points: 7.5,
       complete: false,
-      grade: '-'
+      grade: '',
+      url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
+      type: 'Basiskurs'
     }
 
   ];
@@ -244,9 +312,11 @@ export class AppComponent {
     {
       code: 'EXC',
       title: 'Exchange',
-      points: 15,
+      points: 30,
       complete: false,
-      grade: '-'
+      grade: '',
+      type: 'Elective',
+      url: 'https://www.bi.edu/study-at-bi/resources-and-opportunities/exchange/'
     }
   ];
 
@@ -256,23 +326,22 @@ export class AppComponent {
       title: 'Digital Business Law',
       points: 7.5,
       complete: false,
-      grade: '-'
+      grade: ''
     },
     {
       code: 'EDI XX10',
       title: 'Digital Business Project',
       points: 15,
       complete: false,
-      grade: '-'
+      grade: ''
     },
     {
       code: 'ELE 1234',
       title: 'Elective',
       points: 7.5,
       complete: false,
-      grade: '-'
-    },
-
+      grade: ''
+    }
   ];
 
   totalAngularPackages;
@@ -282,16 +351,11 @@ export class AppComponent {
       moveItemInArray(event.container.data,
         event.previousIndex,
         event.currentIndex);
-        alert(JSON.stringify(event.container.data));
+
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex, event.currentIndex);
-        this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular').subscribe(data => {
-          this.totalAngularPackages = data.total;
-alert(this.totalAngularPackages);
-          alert(JSON.stringify(event.container.data));
-      })
     }
   }
 }

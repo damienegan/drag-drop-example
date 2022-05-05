@@ -5,7 +5,7 @@
   </tr>
   <tr>
     <td><h1>Studieprogram: {{title}}&nbsp;&nbsp;&nbsp;&nbsp;</h1></td>
-   <td><mat-form-field appearance="standard">
+   <td><mat-form-field appearance="fill">
     <mat-label>Select specialisation</mat-label>
     <mat-select [(value)]="selectedSpecialisation">
       <mat-option>None</mat-option>
@@ -14,10 +14,9 @@
     </mat-select>
   </mat-form-field></td>
     <td></td>
-    <td><mat-form-field appearance="standard">
+    <td><mat-form-field appearance="fill">
       <mat-label>Select campus</mat-label>
       <mat-select [(value)]="selectedCampus">
-        <mat-option>None</mat-option>
         <mat-option value="Oslo">Oslo</mat-option>
         <mat-option value="Bergen">Bergen</mat-option>
       </mat-select>
@@ -28,7 +27,7 @@
     <td><h2>GPA: 4.0</h2></td>
   </tr>
   <tr>
-    <td><a [href]="website" target="_blank">Kursinfo</a></td>
+    <td><a [href]="website" target="_blank">Programme info</a></td>
   </tr>
 </table>
 
@@ -41,12 +40,16 @@
         <h2>Høst 2021</h2>
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30 </h3>
         <mat-card *ngFor="let course of semester1">
-          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox align="right" disabled="disabled" checked={{course.complete}}></mat-checkbox>
+          <mat-card-header>
+
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+            <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
           </mat-card-header>
-
+          <mat-card><div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;Completed:<mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox></div></mat-card>
+          <button mat-button *ngIf="course.grade === '-'"><a href="https://www.bi.no" target="_blank">Retake</a></button>
         </mat-card>
       </div>
     </div>
@@ -61,6 +64,7 @@
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
+          <mat-card *ngIf="course.grade === '-'"><a href="https://www.bi.no" target="_blank">Retake</a></mat-card>
         </mat-card>
       </div>
     </div>
@@ -75,13 +79,14 @@
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
           </mat-card-header>
+          <mat-card *ngIf="course.grade === '-'"><a href="https://www.bi.no" target="_blank">Retake</a></mat-card>
         </mat-card>
       </div>
     </div>
 
   <!--mat-card *ngIf="selectedCampus === 'Oslo'">
     <mat-card-header-->
-      <div class="availableCoursesOslo-container column-container">
+      <div class="availableCoursesOslo-container column-container choice-container">
         <div class="list"
            cdkDropList
            #availableCoursesOsloList="cdkDropList"
@@ -91,10 +96,12 @@
           <h2>Valgmuligheter Oslo</h2>
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
           <mat-card *ngFor="let course of availableCoursesOslo" cdkDrag>
-            <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+            <mat-card-header><!--div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
               <mat-card-title>{{course.code}}</mat-card-title>
               <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
               <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+              <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+              <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
             </mat-card-header>
           </mat-card>
         </div>
@@ -102,7 +109,7 @@
     <!--/mat-card-header>
   </mat-card-->
 
-  <!--mat-card *ngIf="selectedCampus === 'Bergen'">
+  <mat-card *ngIf="selectedCampus === 'Bergen'">
     <mat-card-header>
       <div class="availableCoursesBergen-container column-container">
         <div class="list"
@@ -114,7 +121,7 @@
           <h2>Valgmuligheter Bergen</h2>
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
           <mat-card *ngFor="let course of availableCoursesBergen" cdkDrag>
-            <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+            <mat-card-header><!--div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
               <mat-card-title>{{course.code}}</mat-card-title>
               <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
               <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
@@ -123,7 +130,7 @@
         </div>
       </div>
     </mat-card-header>
-  </mat-card-->
+  </mat-card>
 
 
  <mat-card *ngIf="selectedSpecialisation === 'International Business'">
@@ -134,10 +141,12 @@
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
 
           <mat-card *ngFor="let course of specialIntBus" cdkDrag>
-            <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+            <mat-card-header><!--div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
               <mat-card-title>{{course.code}}</mat-card-title>
               <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
               <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+              <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+              <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
             </mat-card-header>
           </mat-card>
         </div>
@@ -156,7 +165,7 @@
 
         <mat-card *ngFor="let course of specialFinance" cdkDrag>
 
-          <mat-card-header><div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+          <mat-card-header><!--div align="right">Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
@@ -167,9 +176,6 @@
       </div>
     </mat-card-header>
   </mat-card>
-
-
-
 
 
 
@@ -187,6 +193,8 @@
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+            <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
           </mat-card-header>
         </mat-card>
       </div>
@@ -206,6 +214,8 @@
             <mat-card-title>{{course.code}}</mat-card-title>
             <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+            <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
           </mat-card-header>
         </mat-card>
       </div>
