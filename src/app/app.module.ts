@@ -1,3 +1,6 @@
+import { AvailableCoursesService } from './available-courses.service';
+import { AvailableBBASpecialisationsService } from './available-bbaspecialisations.service';
+import { AcademicHistoryService } from './academic-history.service';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
@@ -10,6 +13,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,10 +30,12 @@ import {MatSelectModule} from '@angular/material/select';
     MatExpansionModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatSelectModule
-
+    MatSelectModule,
+    MatToolbarModule,
+    MatAutocompleteModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AcademicHistoryService, AvailableBBASpecialisationsService, AvailableCoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,141 @@
+div [hidden]="selectedStudent === '1111'" class="availableCoursesBergen-container column-container choice-container">
+      <div class="list"
+            cdkDropList
+            #availableCoursesBergenList="cdkDropList"
+            [cdkDropListData]="availableCoursesBergen"
+            [cdkDropListConnectedTo]="[]"
+            (cdkDropListDropped)="onDrop($event)">
+            <div [hidden]="selectedStudent === '1111'">
+                <h2>Valgmuligheter {{selectedCampusOla}}</h2>
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+
+                        <mat-card *ngFor="let course of availableCoursesBergen" cdkDrag>
+                            <mat-card-header>
+                                <mat-card-title>{{course.code}}</mat-card-title>
+                                <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+                                <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+                                <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+                                <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+                            </mat-card-header>
+                        </mat-card>
+            </div>
+      </div>
+
+      <div [hidden]="selectedSpecialisationOla === 'International Business'" class="availableCoursesBergenFinance-container column-container choice-container">
+        <div class="list"
+              cdkDropList
+              #availableCoursesBergenFinanceList="cdkDropList"
+              [cdkDropListData]="availableSpecCoursesBergenFinance"
+              [cdkDropListConnectedTo]="[]"
+              (cdkDropListDropped)="onDrop($event)">
+                  <h2>Valgmuligheter {{selectedCampusOla}} {{selectedSpecialisationOla}}</h2>
+                  <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+                  <div [hidden]="selectedStudent === '1111'">
+                          <mat-card *ngFor="let course of availableSpecCoursesBergenFinance" cdkDrag>
+                              <mat-card-header>
+                              <mat-card-title>{{course.code}}</mat-card-title>
+                              <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+                              <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+                              <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+                              <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+                              </mat-card-header>
+                          </mat-card>
+                  </div>
+        </div>
+      </div>
+
+      <div [hidden]="selectedSpecialisationOla === 'Finance'" class="availableCoursesBergenIntBus-container column-container choice-container">
+        <div class="list"
+              cdkDropList
+              #availableCoursesBergenIntBusList="cdkDropList"
+              [cdkDropListData]="availableSpecCoursesBergenIntBus"
+              [cdkDropListConnectedTo]="[]"
+              (cdkDropListDropped)="onDrop($event)">
+
+                <h2>Valgmuligheter {{selectedCampusOla}} {{selectedSpecialisationOla}}</h2>
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+                <div [hidden]="selectedStudent === '1111'">
+                    <mat-card *ngFor="let course of   availableSpecCoursesBergenIntBus" cdkDrag>
+                        <mat-card-header>
+                        <mat-card-title>{{course.code}}</mat-card-title>
+                        <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+                        <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+                        <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="list"
+cdkDropList
+#availableCoursesOsloList="cdkDropList"
+[cdkDropListData]="availableCoursesOslo"
+[cdkDropListConnectedTo]="[]"
+(cdkDropListDropped)="onDrop($event)">
+<div [hidden]="selectedStudent === '2222'">
+    <h2>Valgmuligheter {{selectedCampusKari}}</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+            <mat-card *ngFor="let course of availableCoursesOslo" cdkDrag>
+                <mat-card-header>
+                    <mat-card-title>{{course.code}}</mat-card-title>
+                    <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+                    <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+                    <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+                    <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+</div>
+</div>
+
+<div [hidden]="selectedSpecialisationKari === 'International Business'" class="availableCoursesOsloFinance-container column-container choice-container">
+<div class="list"
+    cdkDropList
+    #availableCoursesOsloFinanceList="cdkDropList"
+    [cdkDropListData]="availableSpecCoursesOsloFinance"
+    [cdkDropListConnectedTo]="[]"
+    (cdkDropListDropped)="onDrop($event)">
+    <div [hidden]="selectedStudent === '2222' && selectedSpecialisationKari ==='Finance'"></div>
+      <h2>Valgmuligheter {{selectedCampusKari}} {{selectedSpecialisationKari}}</h2>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+          <div *ngIf="selectedCampusKari === 'Oslo'">
+              <mat-card *ngFor="let course of availableSpecCoursesOsloFinance" cdkDrag>
+                  <mat-card-header>
+                  <mat-card-title>{{course.code}}</mat-card-title>
+                  <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+                  <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+                  <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+                  <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+                  </mat-card-header>
+              </mat-card>
+    </div>
+</div>
+</div>
+
+<div [hidden]="selectedSpecialisationKari === 'Finance'" class="availableCoursesOsloIntBus-container column-container choice-container">
+<div class="list"
+cdkDropList
+#availableCoursesOsloIntBusList="cdkDropList"
+[cdkDropListData]="availableSpecCoursesOsloIntBus"
+[cdkDropListConnectedTo]="[]"
+(cdkDropListDropped)="onDrop($event)">
+<div [hidden]="selectedStudent === '2222' && selectedSpecialisationKari ==='International Business'"></div>
+    <h2>Valgmuligheter {{selectedCampusKari}} {{selectedSpecialisationKari}}</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;Semester 4 & Semester 5</h3>
+    <div *ngIf="selectedCampusKari === 'Oslo'">
+        <mat-card *ngFor="let course of   availableSpecCoursesOsloIntBus" cdkDrag>
+            <mat-card-header>
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+            <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</div>
+</div>
+</div>

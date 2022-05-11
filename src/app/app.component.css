@@ -25,6 +25,7 @@ h2 {
   display: inline-block;
   vertical-align: top;
   background-color: RGBA(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .completed-container {
@@ -34,7 +35,20 @@ h2 {
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
-  background-color: rgba(255, 255, 128, .05);
+  background-color: rgba(246, 241, 241, 0.5);
+  color: black;
+}
+
+.remaining-container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: rgba(53, 6, 240);
+  color: rgb(232, 232, 240);
+
 }
 
 .choice-container {
@@ -50,8 +64,12 @@ h2 {
 mat-card {
   margin: 1em;
   cursor: pointer;
+  border-radius: 20px;
 }
 
+mat-form-field.mat-form-field {
+  font-size: 16px;
+}
 
 .list {
   border: RGBA(46, 49, 49, .7) solid 1px;
@@ -116,4 +134,8 @@ a {
 
 .example-margin {
   margin: 0 10px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }
