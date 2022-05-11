@@ -62,8 +62,8 @@
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30 </h3>
           <mat-card *ngFor="let course of semester1for1111">
             <mat-card-header>
-              <mat-card-subtitle><h2>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></mat-card-subtitle>
-              <mat-card-title>{{course.code}}</mat-card-title>
+              <mat-card-title>{{course.title}}</mat-card-title>
+              <mat-card-subtitle>{{course.code}}</mat-card-subtitle>
               <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
               <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
               <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
@@ -83,8 +83,8 @@
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
           <mat-card *ngFor="let course of semester2for1111">
             <mat-card-header>
-              <mat-card-title>{{course.code}}</mat-card-title>
-              <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+              <mat-card-title>{{course.title}}</mat-card-title>
+              <mat-card-subtitle>{{course.code}}</mat-card-subtitle>
               <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
               <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
               <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
@@ -105,8 +105,8 @@
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
           <mat-card *ngFor="let course of semester3for1111">
             <mat-card-header>
-              <mat-card-title>{{course.code}}</mat-card-title>
-              <mat-card-subtitle>{{course.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+              <mat-card-title>{{course.title}}</mat-card-title>
+              <mat-card-subtitle>{{course.code}}</mat-card-subtitle>
               <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
               <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
               <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
@@ -139,24 +139,11 @@
             <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
             <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
           </mat-card-header>
-          <mat-card *ngIf="course.code === 'Int'"></mat-card>
-          <mat-card *ngIf="course.code === 'Int'"></mat-card>
-          <mat-card *ngIf="course.code === 'Int'"></mat-card>
-          <mat-card *ngIf="course.code === 'Int'"></mat-card>
-          <mat-card *ngIf="course.code === 'Int'"></mat-card>
+          <mat-card *ngIf="course.code === 'Int'" style="background-color: rgb(63, 35, 206)"><mat-card-content><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></mat-card-content></mat-card>
 
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+
+      <mat-card *ngIf="course.code === 'EXC'" style="background-color: yellowgreen"><mat-card-content><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></mat-card-content></mat-card>
+
 
         </mat-card>
       </div>
@@ -178,10 +165,11 @@
                 <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
             </mat-card-header>
         </mat-card>
+
   </div>
     </div>
 
-    <div class="semester5-container column-container">
+    <div class="availableCoursesBBASemester5-container semester5-container column-container">
   <div class="list"
        cdkDropList
        #semester51111List="cdkDropList"
@@ -199,24 +187,11 @@
         <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
       </mat-card-header>
 
-      <mat-card *ngIf="course.code === 'Int'"></mat-card>
-      <mat-card *ngIf="course.code === 'Int'"></mat-card>
-      <mat-card *ngIf="course.code === 'Int'"></mat-card>
-      <mat-card *ngIf="course.code === 'Int'"></mat-card>
-      <mat-card *ngIf="course.code === 'Int'"></mat-card>
+      <mat-card *ngIf="course.code === 'Int'" style="background-color: rgb(63, 35, 206)"><mat-card-content><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></mat-card-content></mat-card>
 
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+
+      <mat-card *ngIf="course.code === 'EXC'" style="background-color: yellowgreen"><mat-card-content><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></mat-card-content></mat-card>
+
 
     </mat-card>
   </div>
@@ -239,7 +214,7 @@
       </mat-card>
 </div>
 
-
+<div>
 <ng-form *ngIf="selectedSpecialisation1111==='Finance'">
   <div class="list" class="AvailableFinancialSpecialisationsForBBA-container column-container choice-container"
           cdkDropList
@@ -305,6 +280,7 @@
     </div>
 </ng-form>
     </div>
+  </div>
     <div class="semester6-container column-container">
   <div><span class="material-icons">lock</span>
     <h2>Vår 2024</h2>
@@ -318,7 +294,6 @@
     </mat-card>
   </div>
     </div>
-
 </div>
 </div>
 </ng-form>
@@ -561,4 +536,4 @@
 
     </div>
   </div>
-  </ng-form>
+</ng-form>

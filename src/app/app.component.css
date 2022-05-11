@@ -67,6 +67,10 @@ mat-card {
   border-radius: 20px;
 }
 
+.mat-card-exchange {
+  background-color: yellowgreen;
+}
+
 mat-form-field.mat-form-field {
   font-size: 16px;
 }

@@ -17,7 +17,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -26,7 +26,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 3505',
@@ -35,7 +35,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -44,7 +44,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 3505',
@@ -53,7 +53,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -62,7 +62,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 3505',
@@ -71,7 +71,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -80,7 +80,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           }
         ];
         case 'BDS':
@@ -110,7 +110,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 3505',
@@ -119,7 +119,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -128,7 +128,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 3505',
@@ -137,7 +137,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -146,7 +146,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 3505',
@@ -155,7 +155,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-3505/2023-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           },
           {
             code: 'EXC 2953',
@@ -164,7 +164,7 @@ export class AvailableCoursesService {
             complete: false,
             grade: '',
             url: 'https://programmeinfo.bi.no/nb/kurs/EXC-2953/2022-var',
-            type: 'obligatorisk'
+            type: 'Valgbart'
           }
         ];
 
