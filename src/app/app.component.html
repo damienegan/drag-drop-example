@@ -57,8 +57,8 @@
 <div class="container">
   <div class="list-container">
     <div class="semester1-container column-container completed-container">
-        <div>
-          <h2>Høst 2021</h2><img src="src/assets/lock_FILL0_wght400_GRAD0_opsz48.png">
+        <div><span class="material-icons">lock</span>
+          <h2>Høst 2021</h2>
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30 </h3>
           <mat-card *ngFor="let course of semester1for1111">
             <mat-card-header>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="semester2-container column-container completed-container">
-        <div>
+        <div><span class="material-icons">lock</span>
           <h2>Vår 2022</h2>
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
           <mat-card *ngFor="let course of semester2for1111">
@@ -97,9 +97,11 @@
         </div>
     </div>
 
-    <div class="semester3-container column-container completed-container">
+    <div class="semester3-container column-container">
         <div>
-          <h2>Høst 2022</h2><img src="src/assets/lock_FILL0_wght400_GRAD0_opsz48.png">
+          <span class="material-icons">lock</span>
+          <h2>Høst 2022</h2>
+
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
           <mat-card *ngFor="let course of semester3for1111">
             <mat-card-header>
@@ -120,6 +122,45 @@
         </div>
     </div>
 
+    <div class="semester4-container-1111 column-container">
+      <div class="list"
+           cdkDropList
+           #semester41111List="cdkDropList"
+           [cdkDropListData]="semester41111"
+           [cdkDropListConnectedTo]="[semester51111List, availableCoursesBBASemester4List,AvailableFinancialSpecialisationsForBBAList,AvailableIntBusSpecialisationsForBBAList,AvailableShipMgtSpecialisationsForBBAList]"
+           (cdkDropListDropped)="onDrop($event)"><span class="material-icons">lock_open</span>
+        <h2>Vår 2023</h2>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
+        <mat-card *ngFor="let course of semester41111" cdkDrag>
+          <mat-card-header><!--div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
+            <mat-card-title>{{course.code}}</mat-card-title>
+            <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+            <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+            <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+            <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card *ngIf="course.code === 'Int'"></mat-card>
+          <mat-card *ngIf="course.code === 'Int'"></mat-card>
+          <mat-card *ngIf="course.code === 'Int'"></mat-card>
+          <mat-card *ngIf="course.code === 'Int'"></mat-card>
+          <mat-card *ngIf="course.code === 'Int'"></mat-card>
+
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+          <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+
+        </mat-card>
+      </div>
+
     <div class="list" class="availableCoursesBBASemester4-container column-container choice-container"
     cdkDropList
     #availableCoursesBBASemester4List="cdkDropList"
@@ -138,7 +179,47 @@
             </mat-card-header>
         </mat-card>
   </div>
+    </div>
 
+    <div class="semester5-container column-container">
+  <div class="list"
+       cdkDropList
+       #semester51111List="cdkDropList"
+       [cdkDropListData]="semester51111"
+       [cdkDropListConnectedTo]="[semester41111List,availableCoursesBBASemester5List,AvailableFinancialSpecialisationsForBBAList,AvailableIntBusSpecialisationsForBBAList,AvailableShipMgtSpecialisationsForBBAList]"
+       (cdkDropListDropped)="onDrop($event)"><span class="material-icons">lock_open</span>
+    <h2>Høst 2023</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
+    <mat-card *ngFor="let course of semester51111" cdkDrag>
+      <mat-card-header><!--div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
+        <mat-card-title>{{course.code}}</mat-card-title>
+        <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+        <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+        <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
+        <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card *ngIf="course.code === 'Int'"></mat-card>
+      <mat-card *ngIf="course.code === 'Int'"></mat-card>
+      <mat-card *ngIf="course.code === 'Int'"></mat-card>
+      <mat-card *ngIf="course.code === 'Int'"></mat-card>
+      <mat-card *ngIf="course.code === 'Int'"></mat-card>
+
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+      <mat-card *ngIf="course.code === 'EXC'"></mat-card>
+
+    </mat-card>
+  </div>
   <div class="list" class="availableCoursesBBASemester5-container column-container choice-container"
   cdkDropList
   #availableCoursesBBASemester5List="cdkDropList"
@@ -223,102 +304,22 @@
                       </mat-card>
     </div>
 </ng-form>
-
-
-<div class="semester4-container-1111 column-container">
-<div class="list"
-     cdkDropList
-     #semester41111List="cdkDropList"
-     [cdkDropListData]="semester41111"
-     [cdkDropListConnectedTo]="[semester51111List, availableCoursesBBASemester4List,AvailableFinancialSpecialisationsForBBAList,AvailableIntBusSpecialisationsForBBAList,AvailableShipMgtSpecialisationsForBBAList]"
-     (cdkDropListDropped)="onDrop($event)">
-  <h2>Vår 2023</h2>
+    </div>
+    <div class="semester6-container column-container">
+  <div><span class="material-icons">lock</span>
+    <h2>Vår 2024</h2>
     <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
-  <mat-card *ngFor="let course of semester41111" cdkDrag>
-    <mat-card-header><!--div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
-      <mat-card-title>{{course.code}}</mat-card-title>
-      <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
-      <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
-      <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
-      <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-
-  </mat-card>
-</div>
-</div>
-
-<div class="semester5-container column-container">
-<div class="list"
-     cdkDropList
-     #semester51111List="cdkDropList"
-     [cdkDropListData]="semester51111"
-     [cdkDropListConnectedTo]="[semester41111List,availableCoursesBBASemester5List,AvailableFinancialSpecialisationsForBBAList,AvailableIntBusSpecialisationsForBBAList,AvailableShipMgtSpecialisationsForBBAList]"
-     (cdkDropListDropped)="onDrop($event)">
-  <h2>Høst 2023</h2>
-  <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
-  <mat-card *ngFor="let course of semester51111" cdkDrag>
-    <mat-card-header><!--div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox-->
-      <mat-card-title>{{course.code}}</mat-card-title>
-      <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
-      <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
-      <mat-card-subtitle>{{course.type}}</mat-card-subtitle>
-      <mat-card-subtitle><a href="{{course.url}}" target="_blank">Info</a></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-    <mat-card *ngIf="course.code === 'Int'"></mat-card>
-
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-    <mat-card *ngIf="course.code === 'EXC'"></mat-card>
-
-  </mat-card>
-</div>
-</div>
-    <div class="semester6-container column-container completed-container">
-        <div>
-          <h2>Vår 2024</h2>
-          <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
-          <mat-card *ngFor="let course of semester6">
-            <mat-card-header><div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
-              <mat-card-title>{{course.code}}</mat-card-title>
-              <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
-              <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
-            </mat-card-header>
-          </mat-card>
-        </div>
+    <mat-card *ngFor="let course of semester6">
+      <mat-card-header><div>Karakter: {{course.grade}}&nbsp;&nbsp;&nbsp;&nbsp;</div><mat-checkbox disabled="disabled" checked={{course.complete}}></mat-checkbox>
+        <mat-card-title>{{course.code}}</mat-card-title>
+        <mat-card-subtitle>{{course.title}}</mat-card-subtitle>
+        <mat-card-subtitle>{{course.points}} studiepoeng</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
     </div>
 
-  </div>
+</div>
 </div>
 </ng-form>
 
@@ -326,7 +327,7 @@
   <div class="container">
     <div class="list-container">
       <div class="semester1-container column-container completed-container">
-          <div>
+          <div><span class="material-icons">lock</span>
             <h2>Høst 2021</h2>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30 </h3>
             <mat-card *ngFor="let course of semester1for2222">
@@ -346,7 +347,7 @@
       </div>
 
       <div class="semester2-container column-container completed-container">
-          <div>
+          <div><span class="material-icons" alt="Locked">lock</span>
             <h2>Vår 2022</h2>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
             <mat-card *ngFor="let course of semester2for2222">
@@ -365,8 +366,8 @@
           </div>
       </div>
 
-      <div class="semester3-container column-container column-container">
-          <div>
+      <div class="semester3-container column-container">
+          <div><span class="material-icons">lock</span>
             <h2>Høst 2022</h2>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;Avlagte studiepoeng: -/30</h3>
             <mat-card *ngFor="let course of semester3for2222">
@@ -387,13 +388,15 @@
             </mat-card>
           </div>
       </div>
+
+
       <div class="semester4-container-2222 column-container">
         <div class="list"
              cdkDropList
              #semester42222List="cdkDropList"
              [cdkDropListData]="semester42222"
              [cdkDropListConnectedTo]="[semester52222List, availableCoursesBDSList]"
-             (cdkDropListDropped)="onDrop($event)">
+             (cdkDropListDropped)="onDrop($event)"><span class="material-icons">lock_open</span>
           <h2>Vår 2023</h2>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
           <mat-card *ngFor="let course of semester42222" cdkDrag>
@@ -454,6 +457,7 @@
              [cdkDropListData]="semester52222"
              [cdkDropListConnectedTo]="[semester42222List, availableCoursesBDSList]"
              (cdkDropListDropped)="onDrop($event)">
+             <span class="material-icons">lock_open</span>
           <h2>Høst 2023</h2>
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
           <mat-card *ngFor="let course of semester52222" cdkDrag>
@@ -542,7 +546,7 @@
       </div-->
 
       <div class="semester6-container column-container">
-          <div>
+          <div><span class="material-icons">lock</span>
             <h2>Vår 2024</h2>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;Planlagte studiepoeng: 30</h3>
             <mat-card *ngFor="let course of semester6">

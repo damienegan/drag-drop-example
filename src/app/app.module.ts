@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatToolbarModule,
     MatAutocompleteModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [AcademicHistoryService, AvailableBBASpecialisationsService, AvailableCoursesService],
   bootstrap: [AppComponent]

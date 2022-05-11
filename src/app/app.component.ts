@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { PreloadingStrategy } from '@angular/router';
 import { AcademicHistoryService } from './academic-history.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
